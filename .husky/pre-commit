@@ -1,0 +1,4 @@
+pnpm --if-present lint
+pnpm --if-present knip
+pnpm --if-present test
+pnpm --if-present build

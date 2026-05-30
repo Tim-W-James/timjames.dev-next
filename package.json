@@ -2,25 +2,58 @@
   "name": "timjames.dev",
   "version": "0.1.0",
   "private": true,
+  "description": "Personal site for Tim W James - Portfolio, Blog, and more :rocket:",
+  "keywords": ["Tim-W-James, Portfolio, Blog"],
+  "license": "MIT",
+  "author": {
+    "name": "Tim W James",
+    "email": "tim.james.work9800@gmail.com",
+    "url": "https://timjames.dev"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "biome check",
+    "format": "biome format --write",
+    "test": "vitest --pass-with-no-tests",
+    "knip": "knip --cache",
+    "npq": "npq",
+    "prepare": "husky"
   },
   "dependencies": {
     "next": "16.2.6",
-    "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react": "19.2.6",
+    "react-dom": "19.2.6"
   },
   "devDependencies": {
+    "@biomejs/biome": "2.4.16",
+    "@commitlint/cli": "^21.0.1",
+    "@commitlint/config-conventional": "^21.0.1",
     "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "16.2.6",
+    "@tim-w-james/biome-config": "^0.1.1",
+    "@types/node": "^25.9.1",
+    "@types/react": "^19.2.15",
+    "@types/react-dom": "^19.2.3",
+    "@vitest/coverage-v8": "^4.1.7",
+    "husky": "^9.1.7",
+    "knip": "^6.14.2",
+    "npq": "^3.19.5",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.7"
+  },
+  "browserslist": {
+    "production": ["defaults"],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "packageManager": "pnpm@11.5.0",
+  "engines": {
+    "node": ">=26",
+    "pnpm": ">=11"
   }
 }

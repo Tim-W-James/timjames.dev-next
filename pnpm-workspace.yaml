@@ -1,0 +1,5 @@
+allowBuilds:
+  sharp: true
+minimumReleaseAgeExclude:
+  - '@tim-w-james/biome-config@0.1.0'
+  - '@tim-w-james/biome-config@0.1.1'

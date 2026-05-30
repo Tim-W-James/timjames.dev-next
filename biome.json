@@ -1,0 +1,41 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.4.16/schema.json",
+  "extends": ["@tim-w-james/biome-config/biome"],
+  "css": {
+    "parser": {
+      "tailwindDirectives": true
+    }
+  },
+  "linter": {
+    "rules": {
+      "style": {
+        "useComponentExportOnlyModules": {
+          "level": "on",
+          "options": { "allowExportNames": ["metadata"] }
+        }
+      }
+    }
+  },
+  "overrides": [
+    {
+      "includes": ["./*.config.{ts,js,cjs,mjs}"],
+      "linter": {
+        "rules": {
+          "style": {
+            "noProcessEnv": "off"
+          }
+        }
+      }
+    },
+    {
+      "includes": ["./*.cjs", "./*.mjs", "./*.js"],
+      "linter": {
+        "rules": {
+          "suspicious": {
+            "useStrictMode": "off"
+          }
+        }
+      }
+    }
+  ]
+}
