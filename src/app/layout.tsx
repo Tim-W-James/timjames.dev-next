@@ -6,6 +6,7 @@ import AccessibilityProvider from "@components/AccessiblityProvider";
 import ErrorBoundaryClient from "@components/ErrorBoundaryClient";
 import Footer from "@layout/Footer";
 import Navbar from "@layout/nav/Navbar";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 // biome-ignore lint/style/noProcessEnv: allowed for metadata
 // biome-ignore lint/correctness/noProcessGlobal: allowed for metadata
@@ -71,6 +72,7 @@ const RootLayout: React.FC<{
   <html className="h-full antialiased" data-scroll-behavior="smooth" lang="en">
     <body className="flex min-h-full flex-col">
       <ErrorBoundaryClient>
+        <SpeedInsights />
         <Image
           alt=""
           aria-hidden

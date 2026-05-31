@@ -30,6 +30,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@vercel/speed-insights": "^2.0.0",
     "ahooks": "^3.9.7",
     "clsx": "^2.1.1",
     "next": "16.2.6",
@@ -80,7 +81,7 @@
   },
   "packageManager": "pnpm@11.5.0",
   "engines": {
-    "node": ">=24",
+    "node": "=24",
     "pnpm": ">=11"
   }
 }
