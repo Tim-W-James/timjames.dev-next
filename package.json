@@ -4,6 +4,14 @@
   "private": true,
   "description": "Personal site for Tim W James - Portfolio, Blog, and more :rocket:",
   "keywords": ["Tim-W-James, Portfolio, Blog"],
+  "homepage": "https://github.com/Tim-W-James/timjames.dev-next#readme",
+  "bugs": {
+    "url": "https://github.com/Tim-W-James/timjames.dev-next/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tim-W-James/timjames.dev-next.git"
+  },
   "license": "MIT",
   "author": {
     "name": "Tim W James",
@@ -72,7 +80,7 @@
   },
   "packageManager": "pnpm@11.5.0",
   "engines": {
-    "node": ">=26",
+    "node": ">=24",
     "pnpm": ">=11"
   }
 }
