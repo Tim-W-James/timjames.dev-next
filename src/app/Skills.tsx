@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 /** biome-ignore-all lint/complexity/noUselessFragments: Required for custom children */
 import Accordion from "@components/Accordion";
 import HashLink from "@components/HashLink";

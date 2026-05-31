@@ -1,4 +1,3 @@
-/* eslint-disable jsdoc/require-param */
 /** biome-ignore-all lint/nursery/useDomQuerySelector: dom workaround */
 /** biome-ignore-all lint/nursery/useDomNodeTextContent: dom workaround */
 // Source: https://github.com/oaf-project/oaf-react-router

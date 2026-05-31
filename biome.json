@@ -11,7 +11,9 @@
       "style": {
         "useComponentExportOnlyModules": {
           "level": "on",
-          "options": { "allowExportNames": ["metadata"] }
+          "options": {
+            "allowExportNames": ["metadata", "generateMetadata", "viewport"]
+          }
         }
       },
       "correctness": {

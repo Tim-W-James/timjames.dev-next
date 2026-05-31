@@ -9,7 +9,6 @@ import MarkdownRenderer from "./MarkdownRenderer";
 
 type BlogArticleContentProps = { article: DevdottoArticle };
 
-// eslint-disable-next-line sonarjs/cognitive-complexity
 const BlogArticle: React.FC<BlogArticleContentProps> = ({ article }) => {
   const sharableUrl = `https://timjames.dev/blog/${article.slug}`;
   return (
@@ -40,7 +39,6 @@ const BlogArticle: React.FC<BlogArticleContentProps> = ({ article }) => {
           <div className={clsx("flex gap-4 text-xl", "flex-wrap")}>
             <a
               className={clsx(
-                // eslint-disable-next-line sonarjs/no-duplicate-string
                 "hover:text-light-accent active:text-dark-accent",
                 "flex items-center gap-1",
               )}
@@ -106,11 +104,9 @@ const BlogArticle: React.FC<BlogArticleContentProps> = ({ article }) => {
         <div className={clsx("radial-border mt-4 flex justify-center gap-2")}>
           <a
             className={clsx(
-              // eslint-disable-next-line sonarjs/no-duplicate-string
               "flex items-center gap-2 hover:text-light-accent",
               "border-r",
               "pr-2",
-              // eslint-disable-next-line sonarjs/no-duplicate-string
               "active:text-dark-accent",
             )}
             href={article.url}

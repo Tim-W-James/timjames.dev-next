@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import Image from "next/image";
 import "@styles/main.scss";
 import backgroundImage from "@assets/images/bg-aurora.jpg";
@@ -7,10 +7,62 @@ import ErrorBoundaryClient from "@components/ErrorBoundaryClient";
 import Footer from "@layout/Footer";
 import Navbar from "@layout/nav/Navbar";
 
+// biome-ignore lint/style/noProcessEnv: allowed for metadata
+// biome-ignore lint/correctness/noProcessGlobal: allowed for metadata
+const siteUrl = process.env.SITE_URL || "https://timjames.dev";
+
 export const metadata: Metadata = {
-  title: "Tim James | Full-Stack Software Engineer 🚀",
+  title: {
+    template: "%s | Tim James",
+    default: "Tim James | Full-Stack Software Engineer 🚀",
+  },
   description:
     "Hi, I'm Tim William James, a full-stack developer from Canberra, Australia. My core technologies include TypeScript, React, and AWS.",
+  authors: {
+    name: "Tim William James",
+    url: siteUrl,
+  },
+  creator: "Tim William James",
+  publisher: "Tim William James",
+  robots: "index, follow",
+  manifest: "/manifest.json",
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/assets/images/logo.png",
+  },
+  metadataBase: new URL(siteUrl),
+  openGraph: {
+    title: "Tim James | Full-Stack Software Engineer 🚀",
+    description:
+      "Hi, I'm Tim William James, a full-stack developer from Canberra, Australia. My core technologies include TypeScript, React, and AWS.",
+    url: siteUrl,
+    siteName: "Tim James",
+    images: [
+      {
+        url: "/assets/images/logo.png",
+        width: 800,
+        height: 600,
+        alt: "Tim James Logo",
+      },
+    ],
+    type: "website",
+    countryName: "Australia",
+    locale: "en-AU",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tim James | Full-Stack Software Engineer 🚀",
+    description:
+      "Hi, I'm Tim William James, a full-stack developer from Canberra, Australia. My core technologies include TypeScript, React, and AWS.",
+    creator: "@TimWJames",
+    images: "/assets/images/logo.png",
+  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#185454",
 };
 
 const RootLayout: React.FC<{

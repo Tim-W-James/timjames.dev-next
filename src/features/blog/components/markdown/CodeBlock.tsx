@@ -54,7 +54,6 @@ const CodeBlock: React.FC<{
     return {};
   };
 
-  // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
   const codeString = (
     typeof props.children === "string"
       ? props.children

@@ -3,6 +3,7 @@ import BlogPostsCarouselWrapper from "@features/blog/components/BlogPostsCarouse
 import FadeInClient from "@layout/FadeInClient";
 import ParallaxProviderClient from "@layout/ParallaxProviderClient";
 import clsx from "clsx";
+import type { Metadata } from "next";
 import { headers } from "next/headers";
 import { getSelectorsByUserAgent } from "react-device-detect";
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
@@ -12,6 +13,12 @@ import MajorProjects from "./MajorProjects";
 import styles from "./page.module.scss";
 import Skills from "./Skills";
 import SocialLinks from "./SocialLinks";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://timjames.dev",
+  },
+};
 
 const Home: React.FC = async () => {
   const headersList = headers();

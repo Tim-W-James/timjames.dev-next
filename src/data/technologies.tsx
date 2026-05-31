@@ -1,4 +1,3 @@
-// eslint-disable-next-line filename-rules/match
 /** biome-ignore-all lint/style/useNamingConvention: Avoid casing for nouns */
 import type { JSX } from "react";
 import { FaAws, FaCss3, FaJava } from "react-icons/fa";

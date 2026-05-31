@@ -56,8 +56,6 @@ export const devdottoArticlesMeta =
   ): (() => Promise<DevdottoArticleMeta[] | undefined>) =>
   async () => {
     try {
-      // eslint-disable-next-line max-len
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
       const articlesMetaEndpoint = `${ARTICLES_API}?${new URLSearchParams({
         username: DEV_DOT_TO_USERNAME,
         // biome-ignore lint/style/useNamingConvention: matches API

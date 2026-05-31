@@ -6,7 +6,16 @@ import FadeInClient from "@layout/FadeInClient";
 import Header from "@layout/Header";
 import { sortByPopularity } from "@utils/sortFuncs";
 import { clsx } from "clsx";
+import type { Metadata } from "next";
 import { SiDevdotto, SiMedium } from "react-icons/si";
+
+export const metadata: Metadata = {
+  title: ROUTES.blog.title,
+  description: ROUTES.blog.description,
+  alternates: {
+    canonical: ROUTES.blog.route,
+  },
+};
 
 const articlesToDisplay = 30;
 

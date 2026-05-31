@@ -3,12 +3,21 @@ import { ROUTES } from "@constants/routes";
 import FadeInClient from "@layout/FadeInClient";
 import Header from "@layout/Header";
 import { clsx } from "clsx";
+import type { Metadata } from "next";
 import Link from "next/link";
 import type { JSX } from "react";
 import { BsFacebook, BsGithub, BsLinkedin } from "react-icons/bs";
 import { FaXTwitter } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import { SiSpotify, SiSteam } from "react-icons/si";
+
+export const metadata: Metadata = {
+  title: ROUTES.contact.title,
+  description: ROUTES.contact.description,
+  alternates: {
+    canonical: ROUTES.contact.route,
+  },
+};
 
 type SocialLinkProps = {
   icon: JSX.Element;

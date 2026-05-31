@@ -6,7 +6,16 @@ import timelineData from "@features/timeline/data/timelineData";
 import FadeInClient from "@layout/FadeInClient";
 import Header from "@layout/Header";
 import { clsx } from "clsx";
+import type { Metadata } from "next";
 import { BsGithub } from "react-icons/bs";
+
+export const metadata: Metadata = {
+  title: ROUTES.projects.title,
+  description: ROUTES.projects.description,
+  alternates: {
+    canonical: ROUTES.projects.route,
+  },
+};
 
 const Projects: React.FC = () => {
   return (

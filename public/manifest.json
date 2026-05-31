@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/web-manifest-combined.json",
   "short_name": "Tim James",
   "name": "Tim James | Software Dev | Portfolio and Blog",
-  "description": "Full-stack software developer from Canberra, Australia. Obsessive coder, cat lover, and all-round nerd.",
+  "description": "Hi, I'm Tim William James, a full-stack developer from Canberra, Australia. My core technologies include TypeScript, React, and AWS.",
   "categories": ["software", "development", "portfolio"],
   "start_url": ".",
   "display": "standalone",

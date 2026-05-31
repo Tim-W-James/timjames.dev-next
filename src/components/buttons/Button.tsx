@@ -153,7 +153,6 @@ const Button = ({
           className={className}
           href={otherProps.to ?? "/"}
           onMouseMove={setHoverEffects}
-          // eslint-disable-next-line react/jsx-no-leaked-render
           title={label && tooltip}
           type="button"
         >
@@ -169,7 +168,6 @@ const Button = ({
           disabled={disabled}
           onClick={otherProps.onClick}
           onMouseMove={setHoverEffects}
-          // eslint-disable-next-line react/jsx-no-leaked-render
           title={label && tooltip}
           type="button"
           {...otherProps.childProps}
@@ -187,7 +185,6 @@ const Button = ({
           onMouseMove={setHoverEffects}
           rel="noreferrer"
           target="_blank"
-          // eslint-disable-next-line react/jsx-no-leaked-render
           title={label && tooltip}
           type="button"
         >
