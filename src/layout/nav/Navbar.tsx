@@ -1,15 +1,14 @@
 "use client";
 import logo from "@assets/images/logo.png";
-import { NAV_ROUTES } from "@constants/routes";
+import { ROUTES } from "@constants/routes";
 import { clsx } from "clsx";
 import { usePathname } from "next/navigation";
-import { lazy, Suspense, useCallback, useEffect, useState } from "react";
+import { Suspense, useCallback, useEffect, useState } from "react";
 import ClickAwayListener from "react-click-away-listener";
+import MenuToggle from "./MenuToggle";
 import styles from "./Navbar.module.scss";
 import NavbarBrand from "./NavbarBrand";
 import NavbarLink from "./NavbarLink";
-
-const MenuToggle = lazy(() => import("./MenuToggle"));
 
 /**
  * Responsive nav bar
@@ -20,10 +19,14 @@ const Navbar: React.FC = () => {
 
   const navbarItems = (
     <>
-      {Object.values(NAV_ROUTES).map((routeConfig) => (
+      {Object.values(ROUTES).map((routeConfig) => (
         <NavbarLink
           inHamburgerMenu={hamburgerMenuIsOpen}
-          isSelected={routeConfig.route === pathname}
+          isSelected={
+            routeConfig.route === "/"
+              ? pathname === "/"
+              : pathname.startsWith(routeConfig.route)
+          }
           key={routeConfig.title}
           label={routeConfig.title}
           order={1}
@@ -34,7 +37,7 @@ const Navbar: React.FC = () => {
   );
 
   const navbarBrand = (
-    <NavbarBrand label="TimJames.dev" logo={logo} to={NAV_ROUTES.home.route} />
+    <NavbarBrand label="TimJames.dev" logo={logo} to={ROUTES.home.route} />
   );
 
   useEffect(() => {
@@ -65,33 +68,33 @@ const Navbar: React.FC = () => {
         </div>
       </nav>
 
-      <div className={clsx("min-[1050px]:hidden")}>
-        <ClickAwayListener onClickAway={closeHamburgerMenu}>
-          <nav className={clsx("sticky top-0 left-0 z-[100]")}>
-            <div
-              className={clsx(
-                "flex w-screen content-center items-center justify-between py-2",
-                "flex-row",
-                styles._navbar,
-              )}
-            >
-              {navbarBrand}
-              <Suspense>
-                <MenuToggle
-                  baseColor="hsl(185deg 46% 52%)"
-                  hoverColor="hsl(180deg 5% 91%)"
-                  isOpen={hamburgerMenuIsOpen}
-                  toggle={toggleHamburgerMenu}
-                />
-              </Suspense>
-            </div>
+      <ClickAwayListener onClickAway={closeHamburgerMenu}>
+        <nav
+          className={clsx("sticky top-0 left-0 z-[100] min-[1050px]:hidden")}
+        >
+          <div
+            className={clsx(
+              "flex w-screen content-center items-center justify-between py-2",
+              "flex-row",
+              styles._navbar,
+            )}
+          >
+            {navbarBrand}
+            <Suspense>
+              <MenuToggle
+                baseColor="hsl(185deg 46% 52%)"
+                hoverColor="hsl(180deg 5% 91%)"
+                isOpen={hamburgerMenuIsOpen}
+                toggle={toggleHamburgerMenu}
+              />
+            </Suspense>
+          </div>
 
-            <div className={clsx(styles._navbarMenu)}>
-              {hamburgerMenuIsOpen ? navbarItems : null}
-            </div>
-          </nav>
-        </ClickAwayListener>
-      </div>
+          <div className={clsx(styles._navbarMenu)}>
+            {hamburgerMenuIsOpen ? navbarItems : null}
+          </div>
+        </nav>
+      </ClickAwayListener>
     </>
   );
 };

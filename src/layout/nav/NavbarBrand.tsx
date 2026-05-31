@@ -1,3 +1,4 @@
+import type { RoutePaths } from "@constants/routes";
 import { clsx } from "clsx";
 import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
@@ -6,7 +7,7 @@ import { useCallback } from "react";
 type NavbarBrandProps = {
   label: string;
   logo: StaticImageData;
-  to: string;
+  to: RoutePaths;
 };
 
 /**

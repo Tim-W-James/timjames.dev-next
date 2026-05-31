@@ -1,4 +1,4 @@
-export const NAV_ROUTES = {
+export const ROUTES = {
   home: {
     title: "Home",
     description: undefined,
@@ -20,3 +20,5 @@ export const NAV_ROUTES = {
     route: "/contact",
   },
 } as const;
+
+export type RoutePaths = (typeof ROUTES)[keyof typeof ROUTES]["route"];

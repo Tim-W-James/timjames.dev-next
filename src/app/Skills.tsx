@@ -3,7 +3,7 @@
 import Accordion from "@components/Accordion";
 import HashLink from "@components/HashLink";
 import Tooltip from "@components/Tooltip";
-import { NAV_ROUTES } from "@constants/routes";
+import { ROUTES } from "@constants/routes";
 import { clsx } from "clsx";
 import Link from "next/link";
 import { BsFillFileEarmarkCodeFill, BsFillKanbanFill } from "react-icons/bs";
@@ -41,7 +41,7 @@ const Skills: React.FC = () => {
             <Link
               aria-label="Agile Digital"
               className={clsx("link")}
-              href={`${NAV_ROUTES.projects.route}?categories=Agile%2520Digital`}
+              href={`${ROUTES.projects.route}?categories=Agile%2520Digital`}
               title="View my projects with Agile Digital"
             >
               Agile Digital
@@ -85,7 +85,7 @@ const Skills: React.FC = () => {
             <Link
               aria-label="blog"
               className={clsx("link")}
-              href={NAV_ROUTES.blog.route}
+              href={ROUTES.blog.route}
               title="View my blog"
             >
               blog
@@ -94,7 +94,7 @@ const Skills: React.FC = () => {
             <Link
               aria-label="Agile Digital"
               className={clsx("link")}
-              href={`${NAV_ROUTES.projects.route}?categories=Agile%2520Digital`}
+              href={`${ROUTES.projects.route}?categories=Agile%2520Digital`}
               title="View my projects with Agile Digital"
             >
               Agile Digital
@@ -103,7 +103,7 @@ const Skills: React.FC = () => {
             <Link
               aria-label="Toyota Finance Australia"
               className={clsx("link")}
-              href={`${NAV_ROUTES.projects.route}?reset#Toyota Finance Australia`}
+              href={`${ROUTES.projects.route}?reset#Toyota Finance Australia`}
               title="View project details"
             >
               Toyota Finance Australia
@@ -113,7 +113,7 @@ const Skills: React.FC = () => {
             <Link
               aria-label="ANU TechLauncher project"
               className={clsx("link")}
-              href={`${NAV_ROUTES.projects.route}?reset#Siding Spring Observatory VR Experience`}
+              href={`${ROUTES.projects.route}?reset#Siding Spring Observatory VR Experience`}
               title="View project details"
             >
               ANU TechLauncher project

@@ -1,3 +1,4 @@
+import type { RoutePaths } from "@constants/routes";
 import { useTouchInputQuery } from "@hooks/useMediaQuery";
 import { setMouseHoverCssProperties } from "@utils/mouseHover";
 import { clsx } from "clsx";
@@ -8,7 +9,7 @@ import styles from "./NavbarLink.module.scss";
 
 type NavbarLinkProps = {
   label: string;
-  to?: string;
+  to?: RoutePaths;
   order: 1 | 2 | 3 | 4 | 5;
   isSelected?: boolean;
   inHamburgerMenu?: boolean;

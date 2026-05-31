@@ -1,5 +1,5 @@
 import HashLink from "@components/HashLink";
-import { NAV_ROUTES } from "@constants/routes";
+import { ROUTES } from "@constants/routes";
 import technologies from "@data/technologies";
 import FadeInClient from "@layout/FadeInClient";
 import { clsx } from "clsx";
@@ -45,7 +45,7 @@ const CoreTechnologies: React.FC = async () => {
                   "hover:text-light-accent active:text-dark-accent",
                   "active:underline",
                 )}
-                href={`${NAV_ROUTES.projects.route}?${new URLSearchParams({
+                href={`${ROUTES.projects.route}?${new URLSearchParams({
                   technologies: key.toLowerCase(),
                 }).toString()}`}
                 // biome-ignore lint/suspicious/noArrayIndexKey: Static array

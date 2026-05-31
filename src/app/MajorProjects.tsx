@@ -1,6 +1,6 @@
 import Button from "@components/buttons/Button";
 import HashLink from "@components/HashLink";
-import { NAV_ROUTES } from "@constants/routes";
+import { ROUTES } from "@constants/routes";
 import Timeline from "@features/timeline/components/Timeline";
 import timelineData from "@features/timeline/data/timelineData";
 import type TimelineItemData from "@features/timeline/types/timelineData";
@@ -37,7 +37,7 @@ const MajorProjects: React.FC = () => {
             isLight
             label="More Projects"
             mode="route"
-            to={`${NAV_ROUTES.projects.route}?reset`}
+            to={`${ROUTES.projects.route}?reset`}
             tooltip="View more projects"
           />
         </div>

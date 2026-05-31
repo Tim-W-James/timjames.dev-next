@@ -1,3 +1,4 @@
+import type { RoutePaths } from "@constants/routes";
 import type technologies from "@data/technologies";
 import type { StaticImageData } from "next/image";
 import type { JSX } from "react";
@@ -14,7 +15,7 @@ type TimelineItemData = {
   isFeatured?: boolean;
   links?: {
     text: string;
-    url: string;
+    url: RoutePaths | `https://${string}` | `/blog/${string}`;
     icon?: JSX.Element;
   }[];
   searchOnly?: boolean;

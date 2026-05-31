@@ -1,6 +1,6 @@
 import Button from "@components/buttons/Button";
 import ScrollToTopButton from "@components/ScrollToTopButton";
-import { NAV_ROUTES } from "@constants/routes";
+import { ROUTES } from "@constants/routes";
 import Timeline from "@features/timeline/components/Timeline";
 import timelineData from "@features/timeline/data/timelineData";
 import FadeInClient from "@layout/FadeInClient";
@@ -11,7 +11,7 @@ import { BsGithub } from "react-icons/bs";
 const Projects: React.FC = () => {
   return (
     <>
-      <Header title={NAV_ROUTES.projects.title} />
+      <Header title={ROUTES.projects.title} />
       <main>
         <FadeInClient transitionDuration={200}>
           <div className={clsx("mb-8 flex justify-center")}>

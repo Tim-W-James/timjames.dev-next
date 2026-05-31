@@ -1,4 +1,5 @@
 import Button from "@components/buttons/Button";
+import BlogPostsCarouselWrapper from "@features/blog/components/BlogPostsCarouselWrapper";
 import FadeInClient from "@layout/FadeInClient";
 import ParallaxProviderClient from "@layout/ParallaxProviderClient";
 import clsx from "clsx";
@@ -72,7 +73,7 @@ const Home: React.FC = async () => {
             <div className={clsx("container mx-auto pt-8")}>
               <FadeInClient transitionDuration={400}>
                 <AboutMe />
-                {/* <BlogPostsCarousel /> */}
+                <BlogPostsCarouselWrapper />
                 <MajorProjects />
                 <Skills />
                 <div className={clsx("mt-8 flex justify-center")}>

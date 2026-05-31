@@ -48,6 +48,7 @@ const MenuToggle: React.FC<MenuToggleProps> = ({
   return (
     <button
       aria-label="Open Navigation Menu"
+      className="cursor-pointer"
       onClick={toggle}
       onMouseEnter={enableHover}
       onMouseLeave={disableHover}

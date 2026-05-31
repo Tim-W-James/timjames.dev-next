@@ -1,4 +1,5 @@
 "use client";
+import type { RoutePaths } from "@constants/routes";
 import useMediaQuery, { useTouchInputQuery } from "@hooks/useMediaQuery";
 import { setMouseHoverCssProperties } from "@utils/mouseHover";
 import { clsx } from "clsx";
@@ -25,6 +26,10 @@ type ButtonProps = {
    */
   isLight?: boolean;
   /**
+   * Whether the button is icon only, so hide text
+   */
+  isIconOnly?: boolean;
+  /**
    * Hide the label on mobile devices
    */
   shrinkLabelOnMobile?: boolean;
@@ -43,17 +48,27 @@ type ButtonProps = {
   /**
    * Custom class names to append to the defaults
    */
-  className?: string;
+  className?: string | undefined;
 } & (
   | {
       /**
-       * Whether to route to a SPA route or an external link
+       * Route to a page route
        */
-      mode?: "route" | "anchor";
+      mode?: "route";
       /**
-       * href or link for the anchor or route respectively
+       * href or link for the route
        */
-      to?: string;
+      to?: RoutePaths | `${RoutePaths}?${string}` | `${RoutePaths}#${string}`;
+    }
+  | {
+      /**
+       * Route to a external link
+       */
+      mode?: "anchor";
+      /**
+       * href or link for the anchor
+       */
+      to?: `https://${string}` | `mailto:${string}`;
     }
   | {
       /**
@@ -84,12 +99,14 @@ const Button = ({
   disabled,
   appearInactive,
   className: additionalClassName,
+  isIconOnly,
   ...otherProps
   // biome-ignore lint/complexity/noExcessiveCognitiveComplexity: inflated by clsx
 }: ButtonProps) => {
   const deviceIsTouch = useTouchInputQuery();
   const shouldShrinkButtons = useMediaQuery("(max-width: 670px)");
-  const isLabelHidden = shrinkLabelOnMobile && shouldShrinkButtons;
+  const isLabelHidden =
+    isIconOnly || (shrinkLabelOnMobile && shouldShrinkButtons);
 
   const className = clsx(
     label && !isLabelHidden ? "px-8" : "px-4 h-fit text-4xl!",
