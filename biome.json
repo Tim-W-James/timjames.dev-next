@@ -13,10 +13,30 @@
           "level": "on",
           "options": { "allowExportNames": ["metadata"] }
         }
+      },
+      "correctness": {
+        "noUnresolvedImports": "off",
+        "noUndeclaredDependencies": "off"
       }
     }
   },
   "overrides": [
+    {
+      "includes": ["**/*.{tsx,jsx}"],
+      "linter": {
+        "rules": {
+          "style": {
+            "useFilenamingConvention": {
+              "level": "on",
+              "options": {
+                "filenameCases": ["camelCase", "PascalCase", "kebab-case"]
+              }
+            },
+            "useExportsLast": "off"
+          }
+        }
+      }
+    },
     {
       "includes": ["./*.config.{ts,js,cjs,mjs}"],
       "linter": {

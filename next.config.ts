@@ -1,7 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  sassOptions: {
+    additionalData: `
+      @use "@styles/colors.scss" as colors;
+      @use "@styles/mixins.scss" as mixins;
+    `,
+  },
 };
 
 export default nextConfig;

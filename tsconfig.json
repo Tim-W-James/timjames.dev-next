@@ -13,7 +13,8 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@assets/*": ["./public/assets/*"],
+      "@*": ["./src/*"]
     },
 
     // Modules
@@ -55,7 +56,7 @@
     "noPropertyAccessFromIndexSignature": false,
 
     // Completeness
-    "skipLibCheck": false,
+    "skipLibCheck": true, // Some libraries don't pass type checking...
     "noErrorTruncation": true
   },
   "include": [
