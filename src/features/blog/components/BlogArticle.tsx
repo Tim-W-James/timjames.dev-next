@@ -50,9 +50,9 @@ const BlogArticle: React.FC<BlogArticleContentProps> = ({ article }) => {
               title="Like on dev.to"
             >
               <BsHeart />
-              {article.public_reactions_count === 0 ?
-                ""
-              : article.public_reactions_count}
+              {article.public_reactions_count === 0
+                ? ""
+                : article.public_reactions_count}
             </a>
             <a
               className={clsx(
@@ -119,9 +119,9 @@ const BlogArticle: React.FC<BlogArticleContentProps> = ({ article }) => {
             title="Like on dev.to"
           >
             Like <BsHeart />{" "}
-            {article.public_reactions_count === 0 ?
-              ""
-            : article.public_reactions_count}
+            {article.public_reactions_count === 0
+              ? ""
+              : article.public_reactions_count}
           </a>
           <a
             className={clsx(
