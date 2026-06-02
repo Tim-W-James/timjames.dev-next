@@ -1,6 +1,5 @@
 import ImageWithLoading from "@components/ImageWithLoading";
 import { clsx } from "clsx";
-import Image from "next/image";
 import Link from "next/link";
 import { BsChatLeftTextFill, BsHeartFill } from "react-icons/bs";
 import type { DevdottoArticleMeta } from "../types/devdottoArticle";
