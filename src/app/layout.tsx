@@ -78,6 +78,7 @@ const RootLayout: React.FC<{
           aria-hidden
           className="aurora-background-image"
           height={1080}
+          placeholder="blur"
           priority
           quality={75}
           sizes="100vw"

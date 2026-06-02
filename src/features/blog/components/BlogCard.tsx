@@ -1,3 +1,4 @@
+import ImageWithLoading from "@components/ImageWithLoading";
 import { clsx } from "clsx";
 import Image from "next/image";
 import Link from "next/link";
@@ -28,15 +29,10 @@ const BlogCard: React.FC<BlogCardProps> = ({ article, isCarouselItem }) => {
     >
       <div className={clsx("flex h-full justify-between gap-4", "flex-col")}>
         <Link href={`/blog/${article.slug}`}>
-          <Image
+          <ImageWithLoading
             alt="Thumbnail"
-            className={clsx(
-              "border",
-              "rounded-lg",
-              "border-dark-accent",
-              "aspect-wide",
-              "text-center",
-            )}
+            borderClassNames={clsx("rounded-lg", "border-dark-accent")}
+            className={clsx("aspect-wide")}
             height={175}
             src={article.social_image}
             width={350}

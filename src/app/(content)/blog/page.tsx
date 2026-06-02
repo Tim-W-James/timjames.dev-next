@@ -21,10 +21,13 @@ const articlesToDisplay = 30;
 
 const Blog: React.FC = async () => {
   const articles = await devdottoArticlesMeta(articlesToDisplay)();
+  const hasNoArticles =
+    !articles.success || (articles.success && articles.data.length === 0);
   return (
     <>
       <Header title={ROUTES.blog.title} />
       <main>
+        <h2 className={clsx("sr-only")}>Articles</h2>
         <div>
           <FadeInClient transitionDuration={200}>
             <div
@@ -56,17 +59,14 @@ const Blog: React.FC = async () => {
               className={clsx("flex justify-center gap-4 p-0", "flex-wrap")}
               data-chromatic="ignore"
             >
-              {!articles || articles.length === 0 ? (
-                <div className={clsx("mb-8 text-center text-xl")}>
-                  <span className={clsx("text-danger")}>No articles found</span>{" "}
-                  - Try again later
-                </div>
-              ) : (
-                articles.sort(sortByPopularity).map((articleMeta, index) => (
-                  // biome-ignore lint/suspicious/noArrayIndexKey: stable list
-                  <BlogCard article={articleMeta} key={index} />
-                ))
-              )}
+              {hasNoArticles
+                ? null
+                : articles.data
+                    .sort(sortByPopularity)
+                    .map((articleMeta, index) => (
+                      // biome-ignore lint/suspicious/noArrayIndexKey: stable list
+                      <BlogCard article={articleMeta} key={index} />
+                    ))}
             </section>
           </FadeInClient>
         </div>

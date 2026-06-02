@@ -1,5 +1,6 @@
 import { clsx } from "clsx";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import CodeBlock from "./markdown/CodeBlock";
 import Header from "./markdown/Header";
 
@@ -16,6 +17,7 @@ const MarkdownRenderer: React.FC<{ markdown: string }> = ({ markdown }) => (
         h2: Header,
         h3: Header,
       }}
+      remarkPlugins={[remarkGfm]}
     >
       {markdown}
     </ReactMarkdown>

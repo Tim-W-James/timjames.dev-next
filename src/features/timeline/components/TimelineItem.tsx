@@ -88,8 +88,8 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
                 {itemData.startDate.getFullYear()}
                 {itemData.startDate.getFullYear() ===
                 itemData.endDate.getFullYear()
-                  ? ` - ${itemData.endDate.getFullYear()}`
-                  : ""}
+                  ? ""
+                  : ` - ${itemData.endDate.getFullYear()}`}
               </time>
             </h4>
             <div className={clsx("items-center", "xl:flex", "xl:gap-4")}>

@@ -19,7 +19,11 @@ SyntaxHighlighter.registerLanguage("scss", scss);
 SyntaxHighlighter.registerLanguage("bash", bash);
 SyntaxHighlighter.registerLanguage("markdown", markdown);
 SyntaxHighlighter.registerLanguage("json", json);
-const syntaxTheme = oneDark;
+const syntaxTheme: typeof oneDark = {
+  // Improve contrast over the default oneDark theme
+  ...oneDark,
+  comment: { color: "hsl(219, 10%, 52%)", fontStyle: "italic" },
+} as const;
 
 const languageRegex = /language-(\w+)/u;
 // biome-ignore lint/nursery/useUnicodeRegex: used for code only

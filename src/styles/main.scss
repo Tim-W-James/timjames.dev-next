@@ -186,7 +186,6 @@
   }
 
   .captcha-show {
-    /* stylelint-disable-next-line declaration-no-important */
     z-index: 99999 !important;
   }
 }
@@ -291,21 +290,27 @@
   }
 
   // Override prismjs styles
-  pre {
-    /* stylelint-disable-next-line declaration-no-important */
-    padding: 0 !important;
-  }
+  article.prose {
+    pre {
+      background-color: colors.$inline-code-bg;
+      padding: 0 !important;
+      div {
+        background-color: colors.$inline-code-bg !important;
+      }
+      code {
+        background-color: colors.$inline-code-bg !important;
+      }
+    }
 
-  // Markdown styles for keyboard keys
-  strong {
-    code {
-      border: 1px solid colors.$inline-code-bg;
-      border-bottom: 3px solid colors.$inline-code-bg;
-      /* stylelint-disable-next-line declaration-no-important */
-      background-color: colors.$light-shades !important;
-      /* stylelint-disable-next-line declaration-no-important */
-      color: colors.$dark-shades !important;
-      font-weight: bold;
+    // Markdown styles for keyboard keys
+    strong {
+      code {
+        border: 1px solid colors.$inline-code-bg;
+        border-bottom: 3px solid colors.$inline-code-bg;
+        background-color: colors.$light-shades !important;
+        color: colors.$dark-shades !important;
+        font-weight: bold;
+      }
     }
   }
 
@@ -313,13 +318,9 @@
     *,
     *::before,
     *::after {
-      /* stylelint-disable-next-line declaration-no-important */
       animation-delay: 0 !important;
-      /* stylelint-disable-next-line declaration-no-important */
       animation-duration: 0.01ms !important;
-      /* stylelint-disable-next-line declaration-no-important */
       transition-delay: 0 !important;
-      /* stylelint-disable-next-line declaration-no-important */
       transition-duration: 0.01ms !important;
     }
   }
@@ -328,9 +329,4 @@
   input[type="text"]:not(.form-field, .form-field-error):focus {
     box-shadow: none;
   }
-}
-
-// Hide reCAPTCHA badge by default
-.grecaptcha-badge {
-  z-index: -99999;
 }

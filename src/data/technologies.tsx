@@ -51,6 +51,7 @@ import {
   TbBrandCSharp,
   TbCircleLetterS,
 } from "react-icons/tb";
+import { VscAzure } from "react-icons/vsc";
 
 const technologies = {
   TypeScript: {
@@ -208,8 +209,8 @@ const technologies = {
     link: "https://jupyter.org/",
     isCore: false,
   },
-  SQL: {
-    icon: <SiPostgresql aria-label="SQL" />,
+  PostgreSQL: {
+    icon: <SiPostgresql aria-label="PostgreSQL" />,
     link: "https://www.postgresql.org/",
     isCore: false,
   },
@@ -321,6 +322,16 @@ const technologies = {
   Auth0: {
     icon: <SiAuth0 aria-label="Auth0" />,
     link: "https://auth0.com/",
+    isCore: false,
+  },
+  "Azure Cloud": {
+    icon: <VscAzure aria-label="Azure" />,
+    link: "https://azure.microsoft.com/",
+    isCore: false,
+  },
+  "IBM Cloud": {
+    icon: undefined,
+    link: "https://www.ibm.com/cloud",
     isCore: false,
   },
 } as const satisfies Record<

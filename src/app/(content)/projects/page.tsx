@@ -34,6 +34,7 @@ const Projects: React.FC = () => {
           </div>
           {/** biome-ignore lint/correctness/useUniqueElementIds: explicit fragment */}
           <section aria-label="Timeline" className={clsx("mb-8")} id="timeline">
+            <h2 className={clsx("sr-only")}>Timeline</h2>
             <Timeline data={timelineData} />
             <div className={clsx("flex justify-center")}>
               <ScrollToTopButton />

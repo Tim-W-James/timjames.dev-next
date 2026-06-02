@@ -21,8 +21,88 @@ import type TimelineItemData from "../types/timelineData";
 
 const timelineData: TimelineItemData[] = [
   {
+    startDate: new Date("2026"),
+    endDate: new Date("2026"),
+    title: "Caching Layer at THF",
+    body: (
+      <>
+        Developed a caching layer at{" "}
+        <Tooltip text="THF" tooltip="Teachers Health Fund" /> to improve
+        performance of user-facing APIs, including a synchronisation mechanism
+        to process and validate incoming events.
+      </>
+    ),
+    category: "Agile Digital",
+    isFeatured: true,
+    technologies: ["Hasura", "PostgreSQL", "Azure Cloud", "CSharp"],
+  },
+  {
+    startDate: new Date("2026"),
+    endDate: new Date("2026"),
+    title: "Senior Software Engineer at Agile Digital",
+    body: (
+      <>
+        Promoted to a senior software engineer role at{" "}
+        <Link
+          className={clsx("link")}
+          href="https://agiledigital.com.au/"
+          rel="noreferrer"
+          target="_blank"
+          title="Agile Digital website"
+        >
+          Agile Digital
+        </Link>
+        .
+      </>
+    ),
+    category: "Career Event",
+    isFeatured: false,
+  },
+  {
+    startDate: new Date("2025"),
+    endDate: new Date("2026"),
+    title: "CIAM Uplift at NDIA",
+    body: (
+      <>
+        Developed complex authentication journeys at{" "}
+        <Tooltip text="NDIA" tooltip="National Disability Insurance Agency" />{" "}
+        with social{" "}
+        <Tooltip
+          text="SSO"
+          tooltip="
+      Single Sign-On"
+        />
+        , risk-based analysis and{" "}
+        <Tooltip
+          text="JIT"
+          tooltip="
+      Just-In-Time"
+        />{" "}
+        synchronisation with downstream systems.
+      </>
+    ),
+    category: "Agile Digital",
+    isFeatured: true,
+    technologies: ["ForgeRock Identity Cloud", "IBM Cloud"],
+  },
+  {
+    startDate: new Date("2024"),
+    endDate: new Date("2025"),
+    title: "Data Migration at HKJC",
+    body: (
+      <>
+        Developed tooling at{" "}
+        <Tooltip text="HKJC" tooltip="Hong Kong Jockey Club" /> to facilitate
+        bulk user migration and reconciliation at scale.
+      </>
+    ),
+    category: "Agile Digital",
+    isFeatured: false,
+    technologies: ["PostgreSQL", "Java"],
+  },
+  {
     startDate: new Date("2023"),
-    endDate: new Date("2023"),
+    endDate: new Date("2024"),
     title: "Aged-Care Food Delivery System",
     body: (
       <>
@@ -37,6 +117,13 @@ const timelineData: TimelineItemData[] = [
     ),
     category: "Agile Digital",
     isFeatured: false,
+    technologies: [
+      "React",
+      "TypeScript",
+      "Hasura",
+      "PostgreSQL",
+      "Amazon Web Services",
+    ],
   },
   {
     startDate: new Date("2022"),
@@ -75,20 +162,28 @@ const timelineData: TimelineItemData[] = [
         >
           strict typing for CSS classes
         </Link>
-        .
+        . <br />
+        Later rewritten with{" "}
+        <Link
+          className={clsx("link")}
+          href="https://nextjs.org/"
+          rel="noreferrer"
+          target="_blank"
+          title="NextJS website"
+        >
+          NextJS
+        </Link>{" "}
+        for <Tooltip text="SSR" tooltip="Server-Side Rendering" />.
       </>
     ),
     category: "Personal Project",
     technologies: [
       "React",
-      "Redux",
       "TypeScript",
-      "Vite",
+      "NextJS",
       "Tailwind CSS",
-      "Sass",
       "Figma",
       "Storybook",
-      "Netlify",
       "GitHub Actions",
     ],
     isFeatured: false,
@@ -128,7 +223,7 @@ const timelineData: TimelineItemData[] = [
       </>
     ),
     category: "Agile Digital",
-    isFeatured: true,
+    isFeatured: false,
     links: [
       {
         text: "Online ordering app",
@@ -152,7 +247,7 @@ const timelineData: TimelineItemData[] = [
       </>
     ),
     category: "Agile Digital",
-    isFeatured: true,
+    isFeatured: false,
     links: [
       {
         text: "TFA website",
@@ -285,7 +380,7 @@ const timelineData: TimelineItemData[] = [
     ),
     category: "Australian National University",
     technologies: ["Unity", "Oculus", "Android", "CSharp", "Premiere"],
-    isFeatured: false,
+    isFeatured: true,
     links: [
       {
         text: "Landing page for DREAMS",
@@ -442,7 +537,7 @@ const timelineData: TimelineItemData[] = [
     category: "Australian National University",
     thumbnail: pythonThumbnail,
     isFeatured: false,
-    technologies: ["Python", "SQL", "Jupyter"],
+    technologies: ["Python", "PostgreSQL", "Jupyter"],
     links: [
       {
         text: "Python reference code",
@@ -570,15 +665,14 @@ const timelineData: TimelineItemData[] = [
         <Tooltip text="HTML" tooltip="HyperText Markup Language" />,{" "}
         <Tooltip text="CSS" tooltip="Cascading Style Sheets" />, and{" "}
         <Tooltip text="Bootstrap" tooltip="Component Library" />. Later
-        rewritten to in{" "}
-        <Tooltip text="NextJS" tooltip="SSR Framework for React" /> and{" "}
-        <Tooltip text="Sanity CMS" tooltip="Headless CMS" />, making the site{" "}
-        <Tooltip text="SEO" tooltip="Search Engine Optimisation" /> optimised
-        and allowing the client to manage their own content.
+        rewritten in <Tooltip text="NextJS" tooltip="SSR Framework for React" />{" "}
+        and <Tooltip text="Sanity CMS" tooltip="Headless CMS" />, making the
+        site <Tooltip text="SEO" tooltip="Search Engine Optimisation" />{" "}
+        optimised and allowing the client to manage their own content.
       </>
     ),
     category: "Personal Project",
-    isFeatured: false,
+    isFeatured: true,
     thumbnail: journeysContinueThumbnail,
     technologies: [
       "HTML",
@@ -680,7 +774,7 @@ const timelineData: TimelineItemData[] = [
       </>
     ),
     category: "Australian National University",
-    isFeatured: true,
+    isFeatured: false,
     technologies: ["ARMv7"],
     links: [
       {

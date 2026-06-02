@@ -1,3 +1,4 @@
+import ImageWithLoading from "@components/ImageWithLoading";
 import ScrollToTopButton from "@components/ScrollToTopButton";
 import { clsx } from "clsx";
 import Image from "next/image";
@@ -21,17 +22,11 @@ const BlogArticle: React.FC<BlogArticleContentProps> = ({ article }) => {
             day: "numeric",
           })}
         </div>
-        <Image
+        <ImageWithLoading
           alt="Blog cover"
-          className={clsx(
-            "mb-0 border",
-            "rounded-xl",
-            "border-light-accent",
-            "text-center",
-          )}
-          height={620}
+          height={420}
           src={article.cover_image}
-          width={1492}
+          width={1000}
         />
         <div
           className={clsx("mx-4 mb-8 flex justify-between gap-4", "flex-wrap")}

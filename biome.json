@@ -8,56 +8,10 @@
   },
   "linter": {
     "rules": {
-      "style": {
-        "useComponentExportOnlyModules": {
-          "level": "on",
-          "options": {
-            "allowExportNames": ["metadata", "generateMetadata", "viewport"]
-          }
-        }
-      },
       "correctness": {
         "noUnresolvedImports": "off",
         "noUndeclaredDependencies": "off"
       }
     }
-  },
-  "overrides": [
-    {
-      "includes": ["**/*.{tsx,jsx}"],
-      "linter": {
-        "rules": {
-          "style": {
-            "useFilenamingConvention": {
-              "level": "on",
-              "options": {
-                "filenameCases": ["camelCase", "PascalCase", "kebab-case"]
-              }
-            },
-            "useExportsLast": "off"
-          }
-        }
-      }
-    },
-    {
-      "includes": ["./*.config.{ts,js,cjs,mjs}"],
-      "linter": {
-        "rules": {
-          "style": {
-            "noProcessEnv": "off"
-          }
-        }
-      }
-    },
-    {
-      "includes": ["./*.cjs", "./*.mjs", "./*.js"],
-      "linter": {
-        "rules": {
-          "suspicious": {
-            "useStrictMode": "off"
-          }
-        }
-      }
-    }
-  ]
+  }
 }

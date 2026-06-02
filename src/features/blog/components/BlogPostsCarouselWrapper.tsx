@@ -22,17 +22,14 @@ const BlogPostsCarouselWrapper: React.FC<BlogPostsCarouselProps> = async ({
   excludeSlugs,
 }) => {
   const latestArticles = await devdottoArticlesMeta(articlesToDisplay)();
-  if (!latestArticles) {
-    return null;
-  }
 
-  return (
+  return latestArticles.success && latestArticles.data.length > 0 ? (
     <BlogPostsCarousel
-      articles={latestArticles}
+      articles={latestArticles.data}
       excludeSlugs={excludeSlugs}
       title={title}
     />
-  );
+  ) : null;
 };
 
 export default BlogPostsCarouselWrapper;

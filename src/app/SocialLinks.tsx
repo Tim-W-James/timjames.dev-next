@@ -21,9 +21,9 @@ const SocialLinks: React.FC = () => (
     />
     <Button
       icon={<FaXTwitter />}
+      isIconOnly
       isLight
-      label=""
-      shrinkLabelOnMobile
+      label="X (Twitter)"
       to="https://twitter.com/TimWJames"
       tooltip="Follow me on X (Twitter) @TimWJames"
     />

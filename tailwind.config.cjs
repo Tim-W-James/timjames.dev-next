@@ -16,8 +16,8 @@ module.exports = {
         warning: "hsl(40deg 76% 41%)",
         success: "hsl(134deg 42% 41%)",
         placeholder: "hsl(218deg 22% 30%)",
-        "inline-code-bg": "hsl(220, 13%, 18%)",
-        "block-code-bg": "hsl(220, 13%, 18%)",
+        "inline-code-bg": "hsl(220, 13%, 8%)",
+        "block-code-bg": "hsl(220, 13%, 8%)",
         "code-text": "hsl(180deg 5% 91%)",
       },
       fontFamily: {

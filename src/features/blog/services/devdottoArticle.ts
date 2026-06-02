@@ -15,11 +15,24 @@ const ARTICLES_API = "https://dev.to/api/articles";
  * @param slug - URL slug (title) for the article
  */
 const devdottoArticle =
-  (slug: string): (() => Promise<DevdottoArticle | undefined>) =>
+  (
+    slug: string,
+  ): (() => Promise<
+    | { success: true; data: DevdottoArticle | undefined }
+    | { success: false; error: Error }
+  >) =>
   async () => {
     try {
       const articleEndpoint = `${ARTICLES_API}/${DEV_DOT_TO_USERNAME}/${slug}`;
       const response = await fetch(articleEndpoint);
+      if (!response.ok) {
+        const newError = new Error(
+          `Failed to fetch article [${slug}] from [${articleEndpoint}]. Received status [${response.status} - ${response.statusText}] and body [${await response.text()}]`,
+        );
+        console.error(newError);
+        return { success: false, error: newError };
+      }
+
       const maybeArticle = await response.json();
       const validatedArticle = devdottoArticleSchema.safeParse(maybeArticle);
       if (!validatedArticle.success) {
@@ -30,16 +43,16 @@ const devdottoArticle =
           },
         );
         console.error(newError);
-        throw newError;
+        return { success: false, error: newError };
       }
-      return validatedArticle.data;
+      return { success: true, data: validatedArticle.data };
     } catch (error) {
       // In case JSON parse fails
       const newError = new Error(`Failed to fetch article [${slug}]`, {
         cause: error,
       });
       console.error(newError);
-      throw newError;
+      return { success: false, error: newError };
     }
   };
 
@@ -53,7 +66,10 @@ export const devdottoArticlesMeta =
   (
     articles: number,
     page?: number,
-  ): (() => Promise<DevdottoArticleMeta[] | undefined>) =>
+  ): (() => Promise<
+    | { success: true; data: DevdottoArticleMeta[] }
+    | { success: false; error: Error }
+  >) =>
   async () => {
     try {
       const articlesMetaEndpoint = `${ARTICLES_API}?${new URLSearchParams({
@@ -63,6 +79,14 @@ export const devdottoArticlesMeta =
         page: String(page ?? 1),
       })}`;
       const response = await fetch(articlesMetaEndpoint);
+      if (!response.ok) {
+        const newError = new Error(
+          `Failed to fetch articles from [${articlesMetaEndpoint}]. Received status [${response.status} - ${response.statusText}] and body [${await response.text()}]`,
+        );
+        console.error(newError);
+        return { success: false, error: newError };
+      }
+
       const maybeArticleMeta = await response.json();
       const validatedArticleMeta =
         devdottoArticlesMetaSchema.safeParse(maybeArticleMeta);
@@ -74,16 +98,16 @@ export const devdottoArticlesMeta =
           },
         );
         console.error(newError);
-        throw newError;
+        return { success: false, error: newError };
       }
-      return validatedArticleMeta.data;
+      return { success: true, data: validatedArticleMeta.data };
     } catch (error) {
       // In case JSON parse fails
       const newError = new Error("Failed to parse article meta", {
         cause: error,
       });
       console.error(newError);
-      throw newError;
+      return { success: false, error: newError };
     }
   };
 

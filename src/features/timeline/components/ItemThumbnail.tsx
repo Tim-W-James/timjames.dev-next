@@ -19,6 +19,7 @@ const ItemThumbnail: React.FC<ItemThumbnailProps> = ({
         "xl:basis-content",
         isOddIndex ? "xl:order-1" : "max-xl:mb-4 max-xl:ml-auto max-xl:w-auto",
       )}
+      placeholder="blur"
       src={itemData.thumbnail}
     />
   ) : null;
