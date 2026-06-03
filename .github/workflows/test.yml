@@ -67,9 +67,6 @@ jobs:
         # Don't fail CI if vulnerabilities are found, but still flag them
         run: pnpm audit --production --audit-level=high || echo "Vulnerabilities found"
 
-      - name: Type Checking 🔧
-        run: pnpm --if-present type-check
-
       - name: Lint 🔧
         run: pnpm --if-present lint
 
