@@ -1,3 +1,4 @@
+"use client";
 import { ROUTES } from "@constants/routes";
 import NavbarLink from "./NavbarLink";
 
