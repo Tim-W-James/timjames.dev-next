@@ -9,7 +9,7 @@ const LoadingNavbarLinks = () => (
         isSelected={false}
         key={routeConfig.title}
         label={routeConfig.title}
-        order={index}
+        order={index + 1}
         to={routeConfig.route}
       />
     ))}

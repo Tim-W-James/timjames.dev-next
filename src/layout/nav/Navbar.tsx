@@ -40,7 +40,7 @@ const Navbar: React.FC = () => {
       <nav
         className={clsx(
           styles._navbar,
-          "sticky top-0 left-0 z-50 hidden w-screen min-[1050px]:block",
+          "sticky top-0 left-0 z-50 w-screen max-[1049px]:hidden min-[1050px]:block",
         )}
       >
         <div className={clsx("container mx-auto")}>
@@ -55,7 +55,9 @@ const Navbar: React.FC = () => {
 
       <ClickAwayListener onClickAway={closeHamburgerMenu}>
         <nav
-          className={clsx("sticky top-0 left-0 z-[100] min-[1050px]:hidden")}
+          className={clsx(
+            "sticky top-0 left-0 z-[100] block min-[1050px]:hidden",
+          )}
         >
           <div
             className={clsx(

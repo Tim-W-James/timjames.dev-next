@@ -91,7 +91,7 @@ const AboutMe: React.FC = () => {
             <li>
               💻 Member of the{" "}
               <Link
-                aria-label="ACS"
+                aria-label="Australian Computer Society"
                 className={clsx("link")}
                 href="https://www.acs.org.au/"
                 rel="noreferrer"

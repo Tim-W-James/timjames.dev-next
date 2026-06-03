@@ -21,7 +21,7 @@ const ActiveNavbarLinks: React.FC<{ inHamburgerMenu: boolean }> = ({
           }
           key={routeConfig.title}
           label={routeConfig.title}
-          order={index}
+          order={index + 1}
           to={routeConfig.route}
         />
       ))}

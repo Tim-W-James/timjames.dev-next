@@ -49,6 +49,8 @@ export const generateMetadata = async ({
                 height: 500,
               },
             ],
+            siteName: "Tim James Blog",
+            url: `${ROUTES.blog.route}/${slug}`,
             type: "article",
             countryName: "Australia",
             locale: "en-AU",

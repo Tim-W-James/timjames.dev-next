@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     description:
       "Hi, I'm Tim William James, a full-stack developer from Canberra, Australia. My core technologies include TypeScript, React, and AWS.",
     url: siteUrl,
-    siteName: "Tim James",
+    siteName: "Tim James Website",
     images: [
       {
         url: "/assets/images/logo.png",
