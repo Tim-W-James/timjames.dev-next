@@ -151,17 +151,16 @@ list of proposed features (and known issues). -->
   types for js. Configured in [`tsconfig.json`](./tsconfig.json)
 - [![Tailwind](https://img.shields.io/badge/-Tailwind-black?style=flat-square&logo=tailwindcss)](https://tailwindcss.com/):
   Utility-first CSS framework. This repo uses a custom setup to auto-generate
-  type definitions for Tailwind classes, go [here](#styling) for further details
+  type definitions for Tailwind classes
 - [![Biome](https://img.shields.io/badge/-Biome-black?style=flat-square&logo=biome)](https://biome.org/docs/2.0.0/user-guide/configuring):
-  Linter/formater for TypeScript. Configured in
-  [`biome.cjs`](./biome.json) that extends [my custom config](https://www.npmjs.com/package/@tim-w-james/biome-config)
+  Linter/formatter for TypeScript. Configured in
+  [`biome.json`](./biome.json) that extends [my custom config](https://www.npmjs.com/package/@tim-w-james/biome-config)
 - [![Storybook](https://img.shields.io/badge/-Storybook-black?style=flat-square&logo=storybook)](https://storybook.timjames.dev):
   view, document and test individual components and pages. Deployed to
-  [Github Pages](https://storybook.timjames.dev)
+  [GitHub Pages](https://storybook.timjames.dev)
 - [![pnpm](https://img.shields.io/badge/-pnpm-black?style=flat-square&logo=pnpm)](https://pnpm.io/):
   configuration for the `pnpm` package manager for better performance, lockfiles
-  and monorepo support. See steps <a href="#todo">below</a> if you wish to use a
-  different package manager
+  and monorepo support.
 - [![Husky](https://img.shields.io/badge/-Husky-black?style=flat-square&logo=git)](https://github.com/typicode/husky):
   pre-commit Git hooks to lint, format and run tests. Configured in
   [`.husky`](./.husky)
