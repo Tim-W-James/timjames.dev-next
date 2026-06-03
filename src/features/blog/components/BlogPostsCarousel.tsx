@@ -1,6 +1,7 @@
 "use client";
 import Button from "@components/buttons/Button";
 import HashLink from "@components/HashLink";
+import { ROUTES } from "@constants/routes";
 import { sortByLatest } from "@utils/sortFuncs";
 import { clsx } from "clsx";
 import { useCallback } from "react";
@@ -105,7 +106,7 @@ const BlogPostsCarousel: React.FC<BlogPostsCarouselProps> = ({
             isLight
             label="View All"
             mode="route"
-            to="/blog?reset"
+            to={ROUTES.blog.route}
             tooltip="View more articles"
           />
           <Button

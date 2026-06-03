@@ -2,7 +2,6 @@
 @use "sass:color";
 @use "sass:meta";
 @config "../../tailwind.config.cjs";
-@import "https://fonts.googleapis.com/css?family=Outfit&display=swap";
 @include meta.load-css("tailwindcss");
 
 @layer components {
@@ -27,22 +26,19 @@
       );
       content: "";
     }
-  }
 
-  .mobile-solid-background {
-    @apply w-screen h-auto bg-dark-shades;
+    @media (pointer: coarse) and (any-pointer: coarse) and (hover: none) and (any-hover: none) {
+      &::before {
+        width: 50vw;
+      }
+    }
 
-    &::before {
-      @apply absolute -z-50;
-
-      width: 50vw;
-      height: calc(100vh * 0.5);
-      background: linear-gradient(
-        180deg,
-        rgb(0 0 0 / 0%) 0%,
-        colors.$dark-shades 50%
-      );
-      content: "";
+    @supports (-webkit-touch-callout: none) {
+      @media (pointer: coarse) and (any-pointer: coarse) and (hover: none) and (any-hover: none) {
+        &::before {
+          visibility: hidden;
+        }
+      }
     }
   }
 
@@ -197,7 +193,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: -10;
+    z-index: -100;
     width: 100vw;
     height: 100vh;
     object-fit: cover;

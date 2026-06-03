@@ -1,3 +1,4 @@
+"use client";
 import type { RoutePaths } from "@constants/routes";
 import { useTouchInputQuery } from "@hooks/useMediaQuery";
 import { setMouseHoverCssProperties } from "@utils/mouseHover";
@@ -10,7 +11,7 @@ import styles from "./NavbarLink.module.scss";
 type NavbarLinkProps = {
   label: string;
   to?: RoutePaths;
-  order: 1 | 2 | 3 | 4 | 5;
+  order: number;
   isSelected?: boolean;
   inHamburgerMenu?: boolean;
 };
@@ -42,11 +43,13 @@ const NavbarLink: React.FC<NavbarLinkProps> = ({
         "subtitle px-8 py-2",
         styles._navbarLink,
         {
-          [styles._selected]: Boolean(isSelected),
+          // biome-ignore lint/style/noNonNullAssertion: untyped CSS
+          [styles._selected!]: Boolean(isSelected),
         },
         inHamburgerMenu ? styles[`_dropdownItem${order}`] : "",
         // Animation doesn't work with Safari
-        { [styles._safari]: isSafari || isMobileSafari },
+        // biome-ignore lint/style/noNonNullAssertion: untyped CSS
+        { [styles._safari!]: isSafari || isMobileSafari },
       )}
       href={route ?? "/"}
       onClick={scrollToTop}

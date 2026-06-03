@@ -11,6 +11,19 @@
       "correctness": {
         "noUnresolvedImports": "off",
         "noUndeclaredDependencies": "off"
+      },
+      "style": {
+        "useComponentExportOnlyModules": {
+          "level": "on",
+          "options": {
+            "allowExportNames": [
+              "metadata",
+              "generateMetadata",
+              "viewport",
+              "generateStaticParams"
+            ]
+          }
+        }
       }
     }
   }

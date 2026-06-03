@@ -1,10 +1,19 @@
 import Button from "@components/buttons/Button";
 import { ROUTES } from "@constants/routes";
 import BlogArticle from "@features/blog/components/BlogArticle";
-import devdottoArticle from "@features/blog/services/devdottoArticle";
+import devdottoArticle, {
+  devdottoArticlesMeta,
+} from "@features/blog/services/devdottoArticle";
 import { clsx } from "clsx";
 import type { Metadata } from "next";
 import { BsFillArrowLeftCircleFill } from "react-icons/bs";
+
+export const generateStaticParams = async () => {
+  const articles = await devdottoArticlesMeta();
+  return articles.success && articles.data
+    ? articles.data.map((article) => ({ slug: article.slug }))
+    : [];
+};
 
 export const generateMetadata = async ({
   params,
@@ -12,8 +21,9 @@ export const generateMetadata = async ({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> => {
   const { slug } = await params;
-  // TODO combine calls from this and the page component
-  const article = await devdottoArticle(slug)();
+  // Note: relies on data-level caching to avoid duplicate requests between
+  // metadata and page
+  const article = await devdottoArticle(slug);
   return {
     title:
       article.success && article.data
@@ -26,6 +36,40 @@ export const generateMetadata = async ({
     alternates: {
       canonical: `${ROUTES.blog.route}/${slug}`,
     },
+
+    ...(article.success && article.data
+      ? {
+          openGraph: {
+            title: article.data.title,
+            description: article.data.description,
+            images: [
+              {
+                url: article.data.social_image,
+                width: 1000,
+                height: 500,
+              },
+            ],
+            siteName: "Tim James Blog",
+            url: `${ROUTES.blog.route}/${slug}`,
+            type: "article",
+            countryName: "Australia",
+            locale: "en-AU",
+          },
+          twitter: {
+            card: "summary_large_image",
+            title: article.data.title,
+            description: article.data.description,
+            creator: "@TimWJames",
+            images: [
+              {
+                url: article.data.social_image,
+                width: 1000,
+                height: 500,
+              },
+            ],
+          },
+        }
+      : {}),
   };
 };
 
@@ -33,7 +77,7 @@ const Article: React.FC<{
   params: Promise<{ slug: string }>;
 }> = async ({ params }) => {
   const { slug } = await params;
-  const article = await devdottoArticle(slug)();
+  const article = await devdottoArticle(slug);
   return article.success && article.data ? (
     <BlogArticle article={article.data} />
   ) : (

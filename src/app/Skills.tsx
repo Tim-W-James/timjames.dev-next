@@ -40,7 +40,7 @@ const Skills: React.FC = () => {
             <Link
               aria-label="Agile Digital"
               className={clsx("link")}
-              href={`${ROUTES.projects.route}?categories=Agile%2520Digital`}
+              href={ROUTES.projects.route}
               title="View my projects with Agile Digital"
             >
               Agile Digital
@@ -93,7 +93,7 @@ const Skills: React.FC = () => {
             <Link
               aria-label="Agile Digital"
               className={clsx("link")}
-              href={`${ROUTES.projects.route}?categories=Agile%2520Digital`}
+              href={ROUTES.projects.route}
               title="View my projects with Agile Digital"
             >
               Agile Digital
@@ -102,7 +102,7 @@ const Skills: React.FC = () => {
             <Link
               aria-label="Toyota Finance Australia"
               className={clsx("link")}
-              href={`${ROUTES.projects.route}?reset#Toyota Finance Australia`}
+              href={`${ROUTES.projects.route}#Toyota Finance Australia`}
               title="View project details"
             >
               Toyota Finance Australia
@@ -112,7 +112,7 @@ const Skills: React.FC = () => {
             <Link
               aria-label="ANU TechLauncher project"
               className={clsx("link")}
-              href={`${ROUTES.projects.route}?reset#Siding Spring Observatory VR Experience`}
+              href={`${ROUTES.projects.route}#Siding Spring Observatory VR Experience`}
               title="View project details"
             >
               ANU TechLauncher project

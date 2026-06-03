@@ -2,40 +2,19 @@
 import logo from "@assets/images/logo.png";
 import { ROUTES } from "@constants/routes";
 import { clsx } from "clsx";
-import { usePathname } from "next/navigation";
 import { Suspense, useCallback, useEffect, useState } from "react";
 import ClickAwayListener from "react-click-away-listener";
+import ActiveNavbarLinks from "./ActiveNavbarLinks";
+import LoadingNavbarLinks from "./LoadingNavbarLinks";
 import MenuToggle from "./MenuToggle";
 import styles from "./Navbar.module.scss";
 import NavbarBrand from "./NavbarBrand";
-import NavbarLink from "./NavbarLink";
 
 /**
  * Responsive nav bar
  */
 const Navbar: React.FC = () => {
   const [hamburgerMenuIsOpen, openHamburgerMenu] = useState(false);
-  const pathname = usePathname();
-
-  const navbarItems = (
-    <>
-      {Object.values(ROUTES).map((routeConfig) => (
-        <NavbarLink
-          inHamburgerMenu={hamburgerMenuIsOpen}
-          isSelected={
-            routeConfig.route === "/"
-              ? pathname === "/"
-              : pathname.startsWith(routeConfig.route)
-          }
-          key={routeConfig.title}
-          label={routeConfig.title}
-          order={1}
-          to={routeConfig.route}
-        />
-      ))}
-    </>
-  );
-
   const navbarBrand = (
     <NavbarBrand label="TimJames.dev" logo={logo} to={ROUTES.home.route} />
   );
@@ -50,12 +29,18 @@ const Navbar: React.FC = () => {
     [],
   );
 
+  const navbarItems = (
+    <Suspense fallback={<LoadingNavbarLinks />}>
+      <ActiveNavbarLinks inHamburgerMenu={hamburgerMenuIsOpen} />
+    </Suspense>
+  );
+
   return (
     <>
       <nav
         className={clsx(
           styles._navbar,
-          "sticky top-0 left-0 z-50 hidden w-screen min-[1050px]:block",
+          "sticky top-0 left-0 z-50 w-screen max-[1049px]:hidden min-[1050px]:block",
         )}
       >
         <div className={clsx("container mx-auto")}>
@@ -70,7 +55,9 @@ const Navbar: React.FC = () => {
 
       <ClickAwayListener onClickAway={closeHamburgerMenu}>
         <nav
-          className={clsx("sticky top-0 left-0 z-[100] min-[1050px]:hidden")}
+          className={clsx(
+            "sticky top-0 left-0 z-[100] block min-[1050px]:hidden",
+          )}
         >
           <div
             className={clsx(
@@ -80,14 +67,12 @@ const Navbar: React.FC = () => {
             )}
           >
             {navbarBrand}
-            <Suspense>
-              <MenuToggle
-                baseColor="hsl(185deg 46% 52%)"
-                hoverColor="hsl(180deg 5% 91%)"
-                isOpen={hamburgerMenuIsOpen}
-                toggle={toggleHamburgerMenu}
-              />
-            </Suspense>
+            <MenuToggle
+              baseColor="hsl(185deg 46% 52%)"
+              hoverColor="hsl(180deg 5% 91%)"
+              isOpen={hamburgerMenuIsOpen}
+              toggle={toggleHamburgerMenu}
+            />
           </div>
 
           <div className={clsx(styles._navbarMenu)}>

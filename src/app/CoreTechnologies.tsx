@@ -3,20 +3,14 @@ import { ROUTES } from "@constants/routes";
 import technologies from "@data/technologies";
 import FadeInClient from "@layout/FadeInClient";
 import { clsx } from "clsx";
-import { headers } from "next/headers";
 import Link from "next/link";
-import { getSelectorsByUserAgent } from "react-device-detect";
 
-const CoreTechnologies: React.FC = async () => {
-  const headersList = headers();
-  const userAgent = (await headersList).get("user-agent") || "";
-  const { isMobile: isDeviceMobile } = getSelectorsByUserAgent(userAgent);
-
+const CoreTechnologies: React.FC = () => {
   return (
     <div
       className={clsx(
         "mx-auto mt-8 flex max-w-xl place-content-center items-center",
-        isDeviceMobile ? "mobile-solid-background" : "solid-background",
+        "solid-background",
         "flex-col",
       )}
     >
@@ -45,9 +39,7 @@ const CoreTechnologies: React.FC = async () => {
                   "hover:text-light-accent active:text-dark-accent",
                   "active:underline",
                 )}
-                href={`${ROUTES.projects.route}?${new URLSearchParams({
-                  technologies: key.toLowerCase(),
-                }).toString()}`}
+                href={ROUTES.projects.route}
                 // biome-ignore lint/suspicious/noArrayIndexKey: Static array
                 key={index}
                 title={`View all my projects that use ${key}`}

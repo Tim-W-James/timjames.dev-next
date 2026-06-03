@@ -16,6 +16,7 @@ const devdottoArticleMetaSchema = z.object({
   positive_reactions_count: z.number(),
   collection_id: z.number().nullable().optional(),
   published_timestamp: z.string(),
+  edited_at: z.string().nullable().optional(),
   cover_image: z.string(),
   social_image: z.string(),
   tag_list: z.union([z.array(z.string()), z.string()]),

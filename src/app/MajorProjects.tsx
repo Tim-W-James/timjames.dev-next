@@ -37,7 +37,7 @@ const MajorProjects: React.FC = () => {
             isLight
             label="More Projects"
             mode="route"
-            to={`${ROUTES.projects.route}?reset`}
+            to={ROUTES.projects.route}
             tooltip="View more projects"
           />
         </div>

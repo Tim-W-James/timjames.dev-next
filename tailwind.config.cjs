@@ -21,7 +21,7 @@ module.exports = {
         "code-text": "hsl(180deg 5% 91%)",
       },
       fontFamily: {
-        sans: ["Outfit", ...defaultTheme.fontFamily.sans],
+        sans: ["var(--font-outfit)", ...defaultTheme.fontFamily.sans],
         mono: ["source-code-pro", ...defaultTheme.fontFamily.mono],
       },
       typography: (theme) => ({

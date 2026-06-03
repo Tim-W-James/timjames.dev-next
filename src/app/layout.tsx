@@ -7,6 +7,16 @@ import ErrorBoundaryClient from "@components/ErrorBoundaryClient";
 import Footer from "@layout/Footer";
 import Navbar from "@layout/nav/Navbar";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { clsx } from "clsx";
+import { Outfit } from "next/font/google";
+import { Suspense } from "react";
+
+const outfit = Outfit({
+  display: "swap",
+  subsets: ["latin"],
+  variable: "--font-outfit",
+  weight: "400",
+});
 
 // biome-ignore lint/style/noProcessEnv: allowed for metadata
 // biome-ignore lint/correctness/noProcessGlobal: allowed for metadata
@@ -37,7 +47,7 @@ export const metadata: Metadata = {
     description:
       "Hi, I'm Tim William James, a full-stack developer from Canberra, Australia. My core technologies include TypeScript, React, and AWS.",
     url: siteUrl,
-    siteName: "Tim James",
+    siteName: "Tim James Website",
     images: [
       {
         url: "/assets/images/logo.png",
@@ -69,9 +79,16 @@ export const viewport: Viewport = {
 const RootLayout: React.FC<{
   children: React.ReactNode;
 }> = ({ children }) => (
-  <html className="h-full antialiased" data-scroll-behavior="smooth" lang="en">
+  <html
+    className={clsx("h-full antialiased", outfit.variable)}
+    data-scroll-behavior="smooth"
+    lang="en"
+  >
     <body className="flex min-h-full flex-col">
       <ErrorBoundaryClient>
+        <Suspense>
+          <AccessibilityProvider />
+        </Suspense>
         <SpeedInsights />
         <Image
           alt=""
@@ -85,11 +102,9 @@ const RootLayout: React.FC<{
           src={backgroundImage}
           width={1920}
         />
-        <AccessibilityProvider>
-          <Navbar />
-          <ErrorBoundaryClient>{children}</ErrorBoundaryClient>
-          <Footer allowFixed />
-        </AccessibilityProvider>
+        <Navbar />
+        <ErrorBoundaryClient>{children}</ErrorBoundaryClient>
+        <Footer allowFixed />
       </ErrorBoundaryClient>
     </body>
   </html>
