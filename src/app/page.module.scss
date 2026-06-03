@@ -3,14 +3,26 @@
   @media (width >= 500px) and (width <= 2400px) {
     margin-top: calc(6rem + 8vh + clamp(0px, 10vw, 50px));
   }
+
+  @media (pointer: coarse) and (any-pointer: coarse) and (hover: none) and (any-hover: none) {
+    margin-top: calc(4rem + 5vh);
+
+    @media only screen and (orientation: landscape) {
+      margin-top: calc(2rem);
+    }
+
+    @media (width >= 800px) {
+      margin-top: calc(2rem + 3vw);
+    }
+  }
 }
 
-._textAlignmentMobile {
-  margin-top: calc(4rem + 5vh);
-  @media only screen and (orientation: landscape) {
-    margin-top: calc(2rem);
-  }
-  @media (width >= 800px) {
-    margin-top: calc(2rem + 3vw);
+._heroTitle {
+  margin-top: 5rem;
+
+  @supports (-webkit-touch-callout: none) {
+    @media (pointer: coarse) and (any-pointer: coarse) and (hover: none) and (any-hover: none) {
+      margin-top: 8rem;
+    }
   }
 }

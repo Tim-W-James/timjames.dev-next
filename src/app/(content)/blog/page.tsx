@@ -17,10 +17,8 @@ export const metadata: Metadata = {
   },
 };
 
-const articlesToDisplay = 30;
-
 const Blog: React.FC = async () => {
-  const articles = await devdottoArticlesMeta(articlesToDisplay)();
+  const articles = await devdottoArticlesMeta();
   const hasNoArticles =
     !articles.success || (articles.success && articles.data.length === 0);
   return (

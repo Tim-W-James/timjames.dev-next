@@ -5,9 +5,5 @@
     "src/styles/colors.scss",
     "src/styles/mixins.scss",
     "src/styles/tailwind-reference.css"
-  ],
-  "ignoreUnresolved": [
-    "./https://fonts.googleapis.com/css?family=Outfit&display=swap.scss",
-    "./https://fonts.googleapis.com/_css?family=Outfit&display=swap.scss"
   ]
 }
