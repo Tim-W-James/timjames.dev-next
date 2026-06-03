@@ -38,7 +38,7 @@
 }
 
 ._mountainBackgroundFiller {
-  @apply absolute -z-[5] w-screen bg-dark-shades;
+  @apply absolute -z-[5] w-full bg-dark-shades;
 
   height: 500vh;
   margin-top: 38vh;

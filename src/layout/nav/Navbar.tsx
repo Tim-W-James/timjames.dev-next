@@ -40,7 +40,7 @@ const Navbar: React.FC = () => {
       <nav
         className={clsx(
           styles._navbar,
-          "sticky top-0 left-0 z-50 w-screen max-[1049px]:hidden min-[1050px]:block",
+          "sticky top-0 left-0 z-50 w-full max-[1049px]:hidden min-[1050px]:block",
         )}
       >
         <div className={clsx("container mx-auto")}>
@@ -61,7 +61,7 @@ const Navbar: React.FC = () => {
         >
           <div
             className={clsx(
-              "flex w-screen content-center items-center justify-between py-2",
+              "flex w-full content-center items-center justify-between py-2",
               "flex-row",
               styles._navbar,
             )}
