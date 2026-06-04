@@ -27,16 +27,14 @@
       content: "";
     }
 
-    @media (hover: none) and (pointer: coarse),
-      (any-hover: none) and (any-pointer: coarse) {
+    @media (any-pointer: coarse) {
       &::before {
         width: 50vw;
       }
     }
 
     @supports (-webkit-touch-callout: none) {
-      @media (hover: none) and (pointer: coarse),
-        (any-hover: none) and (any-pointer: coarse) {
+      @media (any-pointer: coarse) {
         &::before {
           display: none;
         }
