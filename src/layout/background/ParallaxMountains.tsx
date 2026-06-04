@@ -12,7 +12,7 @@ const ParallaxMountains: React.FC = () => {
   const isDeviceMobile = useMobileQuery();
 
   return (
-    <>
+    <div className={clsx(styles._parallaxViewport)}>
       <div className={clsx("gradient-background")} />
       <div
         className={clsx(
@@ -23,12 +23,12 @@ const ParallaxMountains: React.FC = () => {
       />
       <FadeInClient transitionDuration={200}>
         {isDeviceMobile ? (
-          <div className={clsx("flex w-full justify-center")}>
+          <div className={clsx(styles._mobileMountains)}>
             <div className={clsx(styles._mountainMiddleMobile)} />
             <div className={clsx(styles._mountainBackgroundFiller)} />
           </div>
         ) : (
-          <div className={clsx("flex w-full justify-center")}>
+          <div className={clsx(styles._desktopMountains)}>
             <div className={clsx(styles._mountainMiddle)} />
             <Parallax speed={-13} style={{ zIndex: -2 }}>
               <div className={clsx(styles._mountainLeft)} />
@@ -39,7 +39,7 @@ const ParallaxMountains: React.FC = () => {
           </div>
         )}
       </FadeInClient>
-    </>
+    </div>
   );
 };
 
