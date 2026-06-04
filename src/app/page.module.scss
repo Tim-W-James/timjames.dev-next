@@ -4,7 +4,7 @@
     margin-top: calc(6rem + 8vh + clamp(0px, 10vw, 50px));
   }
 
-  @media (pointer: coarse) and (any-pointer: coarse) and (hover: none) and (any-hover: none) {
+  @media (hover: none) and (pointer: coarse) {
     margin-top: calc(4rem + 5vh);
 
     @media only screen and (orientation: landscape) {
@@ -21,7 +21,7 @@
   margin-top: 5rem;
 
   @supports (-webkit-touch-callout: none) {
-    @media (pointer: coarse) and (any-pointer: coarse) and (hover: none) and (any-hover: none) {
+    @media (hover: none) and (pointer: coarse) {
       margin-top: 8rem;
     }
   }

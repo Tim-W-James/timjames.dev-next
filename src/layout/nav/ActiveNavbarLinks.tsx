@@ -16,7 +16,7 @@ const ActiveNavbarLinks: React.FC<{ inHamburgerMenu: boolean }> = ({
           inHamburgerMenu={inHamburgerMenu}
           isSelected={
             routeConfig.route === "/"
-              ? pathname === "/"
+              ? pathname === "/" || pathname === ""
               : pathname.startsWith(routeConfig.route)
           }
           key={routeConfig.title}
