@@ -6,8 +6,8 @@ const LoadingNavbarLinks = () => (
   <>
     {Object.values(ROUTES).map((routeConfig, index) => (
       <NavbarLink
-        // Hardcoding to allow caching
-        isSelected={false}
+        // Hardcoding to only home to allow caching
+        isSelected={routeConfig.route === "/"}
         key={routeConfig.title}
         label={routeConfig.title}
         order={index + 1}
