@@ -229,7 +229,6 @@
   html {
     // Need scroll padding to offset the fixed header
     @apply scroll-smooth scroll-pt-16;
-    overflow-x: clip;
     scrollbar-color: colors.$light-shades
       color.scale(colors.$dark-shades, $alpha: -30%);
   }
