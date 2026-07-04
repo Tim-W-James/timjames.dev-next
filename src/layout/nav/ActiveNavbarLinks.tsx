@@ -21,7 +21,7 @@ const ActiveNavbarLinks: React.FC<{ inHamburgerMenu: boolean }> = ({
       {Object.values(ROUTES).map((routeConfig, index) => (
         <NavbarLink
           inHamburgerMenu={inHamburgerMenu}
-          isSelected={selectedRoute?.title === routeConfig.title}
+          isSelected={selectedRoute.route === routeConfig.route}
           key={routeConfig.title}
           label={routeConfig.title}
           order={index + 1}
