@@ -25,12 +25,7 @@
         colors.$dark-shades 50%
       );
       content: "";
-    }
-
-    @media (any-pointer: coarse) {
-      &::before {
-        width: 50vw;
-      }
+      overflow-x: clip;
     }
 
     @supports (-webkit-touch-callout: none) {

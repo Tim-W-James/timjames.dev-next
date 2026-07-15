@@ -85,7 +85,7 @@ const RootLayout: React.FC<{
     data-scroll-behavior="smooth"
     lang="en"
   >
-    <body className="flex min-h-full flex-col">
+    <body className="relative flex min-h-full flex-col">
       <ErrorBoundaryClient>
         <Suspense>
           <AccessibilityProvider />
@@ -96,13 +96,11 @@ const RootLayout: React.FC<{
           alt=""
           aria-hidden
           className="aurora-background-image"
-          height={1080}
           placeholder="blur"
           priority
           quality={75}
           sizes="100vw"
           src={backgroundImage}
-          width={1920}
         />
         <Navbar />
         <ErrorBoundaryClient>{children}</ErrorBoundaryClient>
