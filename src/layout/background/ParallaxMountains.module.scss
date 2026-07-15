@@ -49,6 +49,10 @@
   border-style: solid;
   border-color: transparent transparent colors.$dark-shades;
   transform: translateX(-50%);
+
+  @media (width >= 600px) {
+    border-width: 0 clamp(600px, 25vw, 25vw) clamp(800px, 75vh, 75vh);
+  }
 }
 
 ._mountainBackgroundFiller {
@@ -58,4 +62,8 @@
   left: 0;
   height: 500vh;
   margin-top: 38vh;
+
+  @media (height <= 600px) {
+    margin-top: 75vh;
+  }
 }

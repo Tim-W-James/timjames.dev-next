@@ -12,13 +12,14 @@
   }
 
   .solid-background {
-    @apply w-screen h-auto bg-dark-shades;
-    overflow-x: clip;
+    @apply relative w-screen max-w-[100vw] bg-dark-shades h-auto;
 
     &::before {
-      @apply absolute -z-50;
+      @apply absolute left-0 -z-50;
 
-      width: 100vw;
+      top: -30vh;
+
+      width: 100%;
       height: calc(100vh * 0.5);
       background: linear-gradient(
         180deg,
@@ -26,12 +27,18 @@
         colors.$dark-shades 50%
       );
       content: "";
-    }
 
-    @supports (-webkit-touch-callout: none) {
-      @media (any-pointer: coarse) {
-        &::before {
-          display: none;
+      @media (width <= 600px) or ((hover: none) and (pointer: coarse)) {
+        top: -60vh;
+      }
+
+      @media ((hover: none) and (pointer: coarse)) {
+        @media (width <= 400px) {
+          top: -70vh;
+        }
+
+        @media (height <= 600px) {
+          top: clamp(-500px, -30%, -400px);
         }
       }
     }
@@ -102,6 +109,10 @@
       rgb(0 0 0 / 0%) 0%,
       colors.$dark-shades 25%
     );
+
+    @media (height <= 600px) {
+      margin-top: 75vh;
+    }
   }
 
   // Override react-select styles
@@ -195,19 +206,10 @@
     object-position: top center;
     pointer-events: none;
 
-    @media (width <= 600px) {
-      left: 50%;
-      width: auto;
-      height: 600px;
-      transform: translateX(-50%);
-    }
-
-    @media (width >= 600px) {
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
-      transform: none;
-    }
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    transform: none;
   }
 
   @font-face {
@@ -224,6 +226,7 @@
   html {
     // Need scroll padding to offset the fixed header
     @apply scroll-smooth scroll-pt-16;
+    overscroll-behavior-y: none;
     scrollbar-color: colors.$light-shades
       color.scale(colors.$dark-shades, $alpha: -30%);
   }
