@@ -13,6 +13,7 @@
 
   .solid-background {
     @apply w-screen h-auto bg-dark-shades;
+    overflow-x: clip;
 
     &::before {
       @apply absolute -z-50;
@@ -25,7 +26,6 @@
         colors.$dark-shades 50%
       );
       content: "";
-      overflow-x: clip;
     }
 
     @supports (-webkit-touch-callout: none) {

@@ -1,11 +1,6 @@
-// biome-ignore lint/correctness/noNodejsModules: config file
-import path from "node:path";
-// biome-ignore lint/correctness/noNodejsModules: config file
-import process from "node:process";
 import type { NextConfig } from "next";
 
-const isDev = process.env.NODE_ENV === "development";
-const repoRoot = path.join(import.meta.dirname, "..");
+const repoRoot = import.meta.dirname;
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   typedRoutes: true,
@@ -23,11 +18,10 @@ const nextConfig: NextConfig = {
       new URL("https://dev-to-uploads.s3.amazonaws.com/**"),
     ],
   },
-  turbopack: isDev
-    ? {
-        root: repoRoot,
-      }
-    : {},
+  outputFileTracingRoot: repoRoot,
+  turbopack: {
+    root: repoRoot,
+  },
 };
 
 export default nextConfig;
