@@ -10,7 +10,6 @@ const CoreTechnologies: React.FC = () => {
     <div
       className={clsx(
         "mx-auto mt-8 flex max-w-xl place-content-center items-center",
-        "solid-background",
         "flex-col",
       )}
     >

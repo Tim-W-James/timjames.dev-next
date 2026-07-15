@@ -1,7 +1,6 @@
-// biome-ignore lint/correctness/noNodejsModules: config file
-import path from "node:path";
 import type { NextConfig } from "next";
 
+const repoRoot = import.meta.dirname;
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   typedRoutes: true,
@@ -19,8 +18,9 @@ const nextConfig: NextConfig = {
       new URL("https://dev-to-uploads.s3.amazonaws.com/**"),
     ],
   },
+  outputFileTracingRoot: repoRoot,
   turbopack: {
-    root: path.join(import.meta.dirname, ".."),
+    root: repoRoot,
   },
 };
 

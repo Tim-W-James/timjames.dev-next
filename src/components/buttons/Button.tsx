@@ -5,7 +5,6 @@ import { setMouseHoverCssProperties } from "@utils/mouseHover";
 import { clsx } from "clsx";
 import Link from "next/link";
 import { type JSX, useCallback } from "react";
-import { isMobileSafari, isSafari } from "react-device-detect";
 import styles from "./Button.module.scss";
 
 type ButtonProps = {
@@ -113,9 +112,6 @@ const Button = ({
     styles._acrylicButton,
     isLight && !disabled ? "acrylic-light" : "acrylic-dark",
     isLight && !disabled ? styles._light : styles._dark,
-    // Radial border doesn't work with Safari
-    // biome-ignore lint/style/noNonNullAssertion: untyped CSS
-    { [styles._safari!]: isSafari || isMobileSafari },
     // biome-ignore lint/style/noNonNullAssertion: untyped CSS
     { [styles._appearInactive!]: Boolean(appearInactive) },
     additionalClassName,

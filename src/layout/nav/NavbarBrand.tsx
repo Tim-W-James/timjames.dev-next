@@ -39,7 +39,6 @@ const NavbarBrand: React.FC<NavbarBrandProps> = ({
         )}
         data-chromatic="ignore"
         height={32}
-        placeholder="blur"
         src={logo}
         width={32}
       />{" "}

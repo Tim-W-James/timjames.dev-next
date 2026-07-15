@@ -25,7 +25,7 @@ const Home: React.FC = () => (
       /* Force Google to use custom meta description for snippets */
       data-nosnippet
     >
-      <FadeInClient transitionDuration={400}>
+      <FadeInClient delay={200} transitionDuration={400}>
         <header
           className={clsx(
             "flex place-content-center items-center",
@@ -52,13 +52,13 @@ const Home: React.FC = () => (
         </header>
       </FadeInClient>
       <main>
-        <FadeInClient transitionDuration={400}>
+        <FadeInClient delay={200} transitionDuration={400}>
           <SocialLinks />
         </FadeInClient>
         <CoreTechnologies />
-        <div className={clsx("solid-background")}>
-          <div className={clsx("container mx-auto pt-8")}>
-            <FadeInClient transitionDuration={400}>
+        <FadeInClient transitionDuration={200}>
+          <div className={clsx("solid-background")}>
+            <div className={clsx("container mx-auto pt-8")}>
               <AboutMe />
               <BlogPostsCarouselWrapper />
               <MajorProjects />
@@ -74,10 +74,10 @@ const Home: React.FC = () => (
                   tooltip="Get in touch"
                 />
               </div>
-            </FadeInClient>
+            </div>
+            <div className={clsx("pb-16")} />
           </div>
-          <div className={clsx("pb-16")} />
-        </div>
+        </FadeInClient>
       </main>
     </div>
   </ParallaxProviderClient>
