@@ -26,7 +26,8 @@ const useMediaQuery = (query: string) => {
  */
 export const useMobileQuery = () =>
   // Both methods have false negatives, so we use both
-  useMediaQuery("(hover: none) and (pointer: coarse)") ?? isMobile;
+  useMediaQuery("(hover: none) and (pointer: coarse)") ??
+  (typeof window !== "undefined" && isMobile);
 
 /**
  * Check if the primary input is touch (not necessarily a mobile device)

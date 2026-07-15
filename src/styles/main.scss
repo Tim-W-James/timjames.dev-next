@@ -28,13 +28,19 @@
       );
       content: "";
 
-      @media (width <= 600px) or ((hover: none) and (pointer: coarse)) {
+      @media (width <= 600px) {
         top: -60vh;
       }
 
-      @media ((hover: none) and (pointer: coarse)) {
+      @media (hover: none) and (pointer: coarse) {
+        top: -60vh;
+
         @media (width <= 400px) {
           top: -70vh;
+        }
+
+        @media (width >= 820px) {
+          top: -40vh;
         }
 
         @media (height <= 600px) {
@@ -205,10 +211,6 @@
     object-fit: cover;
     object-position: top center;
     pointer-events: none;
-
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
     transform: none;
   }
 

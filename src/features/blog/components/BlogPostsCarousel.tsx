@@ -5,7 +5,6 @@ import { ROUTES } from "@constants/routes";
 import { sortByLatest } from "@utils/sortFuncs";
 import { clsx } from "clsx";
 import { useCallback } from "react";
-import { isSafari } from "react-device-detect";
 import {
   BsFillArrowLeftCircleFill,
   BsFillArrowRightCircleFill,
@@ -72,8 +71,7 @@ const BlogPostsCarousel: React.FC<BlogPostsCarouselProps> = ({
             "max-sm:px-1",
             "snap-x overflow-auto",
             "flex gap-4",
-            // biome-ignore lint/style/noNonNullAssertion: untyped CSS
-            { [styles._carousel!]: !isSafari },
+            styles._carousel,
           )}
           data-chromatic="ignore"
           id="carousel"

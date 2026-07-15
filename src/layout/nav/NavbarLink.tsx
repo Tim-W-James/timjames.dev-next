@@ -5,7 +5,6 @@ import { setMouseHoverCssProperties } from "@utils/mouseHover";
 import { clsx } from "clsx";
 import Link from "next/link";
 import { useCallback } from "react";
-import { isMobileSafari, isSafari } from "react-device-detect";
 import styles from "./NavbarLink.module.scss";
 
 type NavbarLinkProps = {
@@ -47,9 +46,6 @@ const NavbarLink: React.FC<NavbarLinkProps> = ({
           [styles._selected!]: Boolean(isSelected),
         },
         inHamburgerMenu ? styles[`_dropdownItem${order}`] : "",
-        // Animation doesn't work with Safari
-        // biome-ignore lint/style/noNonNullAssertion: untyped CSS
-        { [styles._safari!]: isSafari || isMobileSafari },
       )}
       href={route ?? "/"}
       onClick={scrollToTop}
