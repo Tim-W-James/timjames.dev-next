@@ -42,6 +42,7 @@ const Navbar: React.FC = () => {
           styles._navbar,
           "sticky top-0 left-0 z-50 w-screen max-[1049px]:hidden min-[1050px]:block",
         )}
+        data-nosnippet
       >
         <div className={clsx("container mx-auto")}>
           <div
@@ -58,6 +59,7 @@ const Navbar: React.FC = () => {
           className={clsx(
             "sticky top-0 left-0 z-[100] block min-[1050px]:hidden",
           )}
+          data-nosnippet
         >
           <div
             className={clsx(
