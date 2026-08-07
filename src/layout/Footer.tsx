@@ -25,6 +25,7 @@ const Footer: React.FC<FooterProps> = async ({ allowFixed }) => {
           "bottom-0 left-0 z-50 w-screen",
           { fixed: Boolean(allowFixed) },
         )}
+        data-nosnippet
       >
         © <time>{new Date().getFullYear()}</time> Tim James - ABN 31 445 198 482
       </footer>

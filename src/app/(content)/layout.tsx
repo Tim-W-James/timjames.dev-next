@@ -8,13 +8,7 @@ const RootLayout: React.FC<{
     <div
       className={clsx("fixed -z-10 -mt-5 h-screen w-screen bg-dark-shades")}
     />
-    <div
-      className={clsx("container mx-auto my-10 px-8")}
-      /* Force Google to use custom meta description for snippets */
-      data-nosnippet
-    >
-      {children}
-    </div>
+    <div className={clsx("container mx-auto my-10 px-8")}>{children}</div>
   </div>
 );
 
