@@ -59,6 +59,7 @@ const Navbar: React.FC = () => {
           className={clsx(
             "sticky top-0 left-0 z-[100] block min-[1050px]:hidden",
           )}
+          data-nosnippet
         >
           <div
             className={clsx(
